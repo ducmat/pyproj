@@ -1,5 +1,5 @@
 def generer_affichage_texte():
-    return "Bonjour, ceci est un texte affiché en sortie."
+    return "Bonjour, ceci est un texte affiché en sortie dans la console."
 
 
 def main():

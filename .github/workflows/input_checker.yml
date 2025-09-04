@@ -1,0 +1,26 @@
+name: Run script.py on config.yml update
+
+on:
+    push:
+        paths:
+            - 'config.yml'
+
+jobs:
+    run-script:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.x'
+
+            - name: Install dependencies
+              run: |
+                pip install -r requirements.txt
+              continue-on-error: true
+
+            - name: Run script.py
+              run: python script.py
